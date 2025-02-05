@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { Box, Typography } from '@mui/material';
 
 import CalendarPickerDemo from "../samples/CalendarPickerDemo.tsx";
+import SignupDemo from "../samples/SignupDemo.tsx";
 
 const Content: React.FC = () => {
     return (
@@ -13,6 +14,7 @@ const Content: React.FC = () => {
                 <Route path="/services" element={<Typography>Services Page</Typography>} />
                 <Route path="/samples" element={<Typography>Samples</Typography>} />
                 <Route path="/samples/CalendarPicker" element={<CalendarPickerDemo />} />
+                <Route path="/samples/SignupDemo" element={<SignupDemo />} />
                 {/* Add more routes for sub-pages */}
             </Routes>
         </Box>

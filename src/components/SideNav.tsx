@@ -36,6 +36,7 @@ const SideNav: React.FC<SideNavProps> = ({selectedMenu}) => {
             case 'samples':
                 return [
                     {text: 'CalendarPicker', path: '/samples/CalendarPicker'},
+                    {text: 'Signup', path: '/samples/SignupDemo'},
                 ];
             default:
                 return [];
