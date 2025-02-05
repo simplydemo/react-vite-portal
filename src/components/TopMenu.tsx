@@ -8,7 +8,7 @@ interface TopMenuProps {
 
 const TopMenu: React.FC<TopMenuProps> = ({ onMenuSelect }) => {
     return (
-        <AppBar position="static" sx={{ height: '80px' }}>
+        <AppBar position="static" sx={{ height: '80px', marginTop: '10px' }}>
             <Toolbar variant="dense" sx={{ height: '100%' }}>
                 <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                     Portal Theme by React + Vite
@@ -21,6 +21,9 @@ const TopMenu: React.FC<TopMenuProps> = ({ onMenuSelect }) => {
                 </Button>
                 <Button color="inherit" component={Link} to="/services" onClick={() => onMenuSelect('services')}>
                     Services
+                </Button>
+                <Button color="inherit" component={Link} to="/samples" onClick={() => onMenuSelect('samples')}>
+                    Samples
                 </Button>
             </Toolbar>
         </AppBar>

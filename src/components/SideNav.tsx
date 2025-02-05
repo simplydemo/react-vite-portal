@@ -1,13 +1,20 @@
 import React from 'react';
 import {List, ListItem, ListItemText} from '@mui/material';
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 
 interface SideNavProps {
     selectedMenu: string;
 }
 
+interface SubMenuItem {
+    text: string;
+    path: string;
+}
+
 const SideNav: React.FC<SideNavProps> = ({selectedMenu}) => {
-    const getSubMenuItems = () => {
+    const navigate = useNavigate();
+
+    const getSubMenuItems = (): SubMenuItem[] => {
         switch (selectedMenu) {
             case 'home':
                 return [
@@ -26,10 +33,19 @@ const SideNav: React.FC<SideNavProps> = ({selectedMenu}) => {
                     {text: 'Development', path: '/services/development'},
                     {text: 'Support', path: '/services/support'},
                 ];
+            case 'samples':
+                return [
+                    {text: 'CalendarPicker', path: '/samples/CalendarPicker'},
+                ];
             default:
                 return [];
         }
     };
+
+    const handleItemClick = (path: string) => {
+        navigate(path); // 라우팅 처리
+    };
+
 
     return (
         <List sx={{
@@ -41,7 +57,11 @@ const SideNav: React.FC<SideNavProps> = ({selectedMenu}) => {
             height: '100%'
         }}>
             {getSubMenuItems().map((item) => (
-                <ListItem key={item.text} component={Link} to={item.path}>
+                <ListItem key={item.text}
+                          component={Link}
+                          to={item.path}
+                          onClick={() => handleItemClick(item.path)} // 클릭 이벤트 추가
+                >
                     <ListItemText primary={item.text}/>
                 </ListItem>
             ))}
