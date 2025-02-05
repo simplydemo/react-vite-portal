@@ -35,8 +35,10 @@ const SideNav: React.FC<SideNavProps> = ({selectedMenu}) => {
                 ];
             case 'samples':
                 return [
+                    {text: 'Signup', path: '/samples/Signup'},
+                    {text: 'Signin', path: '/samples/Signin'},
                     {text: 'CalendarPicker', path: '/samples/CalendarPicker'},
-                    {text: 'Signup', path: '/samples/SignupDemo'},
+                    {text: 'DataGrid', path: '/samples/DataGrid'},
                 ];
             default:
                 return [];
@@ -44,7 +46,7 @@ const SideNav: React.FC<SideNavProps> = ({selectedMenu}) => {
     };
 
     const handleItemClick = (path: string) => {
-        navigate(path); // 라우팅 처리
+        navigate(path);
     };
 
 

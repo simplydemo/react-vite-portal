@@ -5,11 +5,11 @@ import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import Link from '@mui/material/Link';
-import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid2';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 const theme = createTheme();
@@ -18,7 +18,7 @@ const SignupDemo: React.FC = () => {
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         const formData = new FormData(event.currentTarget);
-        // 예시로 폼 데이터 출력 (실제 구현 시 서버 요청 등을 처리)
+        // 예시: 폼 데이터 콘솔 출력 (실제 구현에서는 서버 전송 등을 수행)
         console.log({
             firstName: formData.get('firstName'),
             lastName: formData.get('lastName'),
@@ -38,7 +38,7 @@ const SignupDemo: React.FC = () => {
                         display: 'flex',
                         flexDirection: 'column',
                         alignItems: 'center',
-                        padding: 3,
+                        p: 3,
                         boxShadow: 3,
                         borderRadius: 2,
                         backgroundColor: 'background.paper',
@@ -52,7 +52,10 @@ const SignupDemo: React.FC = () => {
                     </Typography>
                     <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
                         <Grid container spacing={2}>
-                            <Grid item xs={12} sm={6}>
+                            {
+                                // xs={12} sm={6}
+                            }
+                            <Grid size={{ xs: 12, sm: 6 }}>
                                 <TextField
                                     autoComplete="given-name"
                                     name="firstName"
@@ -63,7 +66,7 @@ const SignupDemo: React.FC = () => {
                                     autoFocus
                                 />
                             </Grid>
-                            <Grid item xs={12} sm={6}>
+                            <Grid size={{ xs: 12, sm: 6 }}>
                                 <TextField
                                     required
                                     fullWidth
@@ -73,7 +76,7 @@ const SignupDemo: React.FC = () => {
                                     autoComplete="family-name"
                                 />
                             </Grid>
-                            <Grid item xs={12}>
+                            <Grid size={{ xs: 12, sm: 20 }}>
                                 <TextField
                                     required
                                     fullWidth
@@ -83,7 +86,7 @@ const SignupDemo: React.FC = () => {
                                     autoComplete="email"
                                 />
                             </Grid>
-                            <Grid item xs={12}>
+                            <Grid size={{ xs: 12}}>
                                 <TextField
                                     required
                                     fullWidth
@@ -94,7 +97,7 @@ const SignupDemo: React.FC = () => {
                                     autoComplete="new-password"
                                 />
                             </Grid>
-                            <Grid item xs={12}>
+                            <Grid size={{ xs: 12}}>
                                 <TextField
                                     required
                                     fullWidth
@@ -115,7 +118,7 @@ const SignupDemo: React.FC = () => {
                             가입하기
                         </Button>
                         <Grid container justifyContent="flex-end">
-                            <Grid item>
+                            <Grid>
                                 <Link href="#" variant="body2">
                                     이미 계정이 있으신가요? 로그인하기
                                 </Link>

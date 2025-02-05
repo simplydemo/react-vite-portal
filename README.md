@@ -57,5 +57,5 @@ npm create vite@latest react-vite-portal -- --template react-ts
 cd react-vite-portal
 npm install react-router-dom styled-components @mui/material@latest @mui/icons-material@latest @emotion/react @emotion/styled 
 
-npm install @mui/x-date-pickers @mui/x-date-pickers dayjs
+npm install @mui/x-data-grid @mui/x-date-pickers @mui/x-date-pickers dayjs
 ```
